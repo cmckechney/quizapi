@@ -1,0 +1,91 @@
+FORMAT: 1A
+HOST: http://polls.apiblueprint.org/
+
+# surveyapi
+
+Polls is a simple API allowing consumers to view polls and vote in them.
+
+## Questions Collection [/quizquestions]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "How many planets are in the solar system?",
+                "questionID": 1,
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "8",
+                        "id" : 1
+                    }, {
+                        "choice": "9",
+                        "id" : 2
+                    }, {
+                        "choice": "10",
+                        "id":3
+                    }, {
+                        "choice": "11",
+                        "id": 4
+                    },
+                    "answer" : "2"
+                ]
+            }
+        ]
+
+
+### Create a New Question [POST]
+
+You may create your own question using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+        {
+            "question": "How many planets are in the solar system?",
+           "choices": [
+                    {
+                        "choice": "8",
+                        "id" : 1
+                    }, {
+                        "choice": "9",
+                        "id" : 2
+                    }, {
+                        "choice": "10",
+                        "id":3
+                    }, {
+                        "choice": "11",
+                        "id": 4
+                    },
+                    "answer" : "2"
+                ]
+        }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questions/2
+
+
+## Single Question [/questions/{id}]
+### List Single Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+                "question": "Favourite programming language?",
+                "questionID": 1,
+                "published_at": "2015-08-05T08:40:51.620Z",
+                "choices": [
+                    {
+                        "choice": "8",
+                        "id" : 1
+                    }
+                ]
+            }
+        ]
