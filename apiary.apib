@@ -5,7 +5,7 @@ HOST: http://polls.apiblueprint.org/
 
 quiz is a simple API allowing for the interface with the solu quiz service.
 
-## Questions Collection [/questions]
+## QuestionBank Collection [/questionbank]
 
 ### List All Questions [GET]
 
@@ -13,26 +13,28 @@ quiz is a simple API allowing for the interface with the solu quiz service.
 
         [
             {
-                "question": "How many planets are in the solar system?",
-                "questionID": 1,
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "type" : "MultipleChoice",
-                "choices": [
-                    {
-                        "choice": "8",
-                        "id" : 1
-                    }, {
-                        "choice": "9",
-                        "id" : 2
-                    }, {
-                        "choice": "10",
-                        "id":3
-                    }, {
-                        "choice": "11",
-                        "id": 4
-                    },
-                    "answer" : "2"
-                ]
+            "Title": "Question #1",
+            "CreatedDate": "2015-01-01 00:00:00",
+            "ModifiedDate": "2015-01-01 00:00:00",
+            "CreatedBy": "Bob",
+            "ModifiedBy": "Frank",
+            "QuestionCategoryID": "1",
+            "QuestionLevelID": "1",
+            "QuestionTypeID": "1",
+            "QuestionID": "1",
+            "Approved": "-1"
+            },
+            {
+            "Title": "Question #1",
+            "CreatedDate": "2015-01-01 00:00:00",
+            "ModifiedDate": "2015-01-01 00:00:00",
+            "CreatedBy": "Bob",
+            "ModifiedBy": "Frank",
+            "QuestionCategoryID": "1",
+            "QuestionLevelID": "1",
+            "QuestionTypeID": "1",
+            "QuestionID": "1",
+            "Approved": "-1"
             }
         ]
 
@@ -46,24 +48,17 @@ form of choices.
 + Request (application/json)
 
         {
-            "question": "How many planets are in the solar system?",
-           "choices": [
-                    {
-                        "choice": "8",
-                        "id" : 1
-                    }, {
-                        "choice": "9",
-                        "id" : 2
-                    }, {
-                        "choice": "10",
-                        "id":3
-                    }, {
-                        "choice": "11",
-                        "id": 4
-                    },
-                    "answer" : "2"
-                ]
-        }
+            "Title": "Question #1",
+            "CreatedDate": "2015-01-01 00:00:00",
+            "ModifiedDate": "2015-01-01 00:00:00",
+            "CreatedBy": "Bob",
+            "ModifiedBy": "Frank",
+            "QuestionCategoryID": "1",
+            "QuestionLevelID": "1",
+            "QuestionTypeID": "1",
+            "QuestionID": "1",
+            "Approved": "-1"
+            }
 
 + Response 201 (application/json)
 
@@ -72,108 +67,22 @@ form of choices.
             Location: /questions/2
 
 
-## Single Question [/questions/{id}]
+## Single Question [/questionbank/{id}]
 ### List Single Questions [GET]
 
 + Response 200 (application/json)
 
         [
             {
-                "question": "Favourite programming language?",
-                "questionID": 1,
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "8",
-                        "id" : 1
-                    }
-                ]
-            }
-        ]
-        
-
-## Question pool [/pool]
-
-### List All Pools [GET]
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "question": "How many planets are in the solar system?",
-                "questionID": 1,
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "type" : "MultipleChoice",
-                "choices": [
-                    {
-                        "choice": "8",
-                        "id" : 1
-                    }, {
-                        "choice": "9",
-                        "id" : 2
-                    }, {
-                        "choice": "10",
-                        "id":3
-                    }, {
-                        "choice": "11",
-                        "id": 4
-                    },
-                    "answer" : "2"
-                ]
-            }
-        ]
-
-
-### Create a New Pool [POST]
-
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
-
-+ Request (application/json)
-
-        {
-            "question": "How many planets are in the solar system?",
-           "choices": [
-                    {
-                        "choice": "8",
-                        "id" : 1
-                    }, {
-                        "choice": "9",
-                        "id" : 2
-                    }, {
-                        "choice": "10",
-                        "id":3
-                    }, {
-                        "choice": "11",
-                        "id": 4
-                    },
-                    "answer" : "2"
-                ]
-        }
-
-+ Response 201 (application/json)
-
-    + Headers
-
-            Location: /questions/2
-
-
-## Single Pool [/pool/{id}]
-### Update Pool [PUT]
-
-+ Response 200 (application/json)
-
-        [
-            {
-                "question": "Favourite programming language?",
-                "questionID": 1,
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "8",
-                        "id" : 1
-                    }
-                ]
+            "Title": "Question #1",
+            "CreatedDate": "2015-01-01 00:00:00",
+            "ModifiedDate": "2015-01-01 00:00:00",
+            "CreatedBy": "Bob",
+            "ModifiedBy": "Frank",
+            "QuestionCategoryID": "1",
+            "QuestionLevelID": "1",
+            "QuestionTypeID": "1",
+            "QuestionID": "1",
+            "Approved": "-1"
             }
         ]
