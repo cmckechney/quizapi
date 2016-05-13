@@ -86,3 +86,149 @@ form of choices.
             "Approved": "-1"
             }
         ]
+        
+
+ 
+
+## Pool Collection [/pool]
+
+### List All Pools [GET]
+
+List all Pool resources that are available
+
++ Response 200 (application/json)
+
+        [
+            {
+            "PoolId": "1",
+            "PoolName": "C# Beginner Pool",
+            "Description": "for all things beginner",
+            "CreatedDate": "2015-01-01 00:00:00",
+            "ModifiedDate": "2015-01-01 00:00:00",
+            "CreatedBy": "asd",
+            "ModifiedBy": "13"
+            },
+            {
+            "PoolId": "2",
+            "PoolName": "eeee",
+            "Description": "eeee",
+            "CreatedDate": "2015-01-01 00:00:00",
+            "ModifiedDate": "2015-01-01 00:00:00",
+            "CreatedBy": "asd",
+            "ModifiedBy": "13"
+            }
+        ]
+
+
+### Create a New Pool [POST]
+
+You may create your own pool using this action. It takes a JSON
+object containing a question and a collection of answers in the
+form of choices.
+
++ Request (application/json)
+
+            {
+            "PoolId": "1",
+            "PoolName": "C# Beginner Pool",
+            "Description": "for all things beginner"
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /pool/2
+
+### Create a New Pool [PUT]
+
+You may update a pool by its resource ID via this call
+
++ Request (application/json)
+
+            {
+            "PoolId": "1",
+            "PoolName": "C# Beginner Pool",
+            "Description": "for all things beginner"
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /pool/2
+
+
+## Single Pool [/pool/{id}]
+### List Single Pool [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+            "PoolId": "1",
+            "PoolName": "C# Beginner Pool",
+            "Description": "for all things beginner",
+            "CreatedDate": "2015-01-01 00:00:00",
+            "ModifiedDate": "2015-01-01 00:00:00",
+            "CreatedBy": "asd",
+            "ModifiedBy": "13"
+            }
+        ]
+        
+
+## QuestionPool Collection [/questionpool]
+
+### List All Questions [GET]
+
++ Response 200 (application/json)
+
+        [
+            {
+            "QuestionPoolId": "1",
+            "PoolId": "1",
+            "QuestionId": "1",
+            "Required": "-1",
+            "CreatedDate": "2015-01-01 00:00:00",
+            "ModifiedDate": "2015-01-01 00:00:00",
+            "CreatedBy": "asdasd",
+            "ModifiedBy": "asasd"
+            }
+        ]
+
+
+### Create a New QuestionPool Iten [POST]
+
+You may add your own question to the pool using this action. 
+
++ Request (application/json)
+
+            {
+            "QuestionPoolId": "1",
+            "PoolId": "1",
+            "QuestionId": "1",
+            "Required": "-1"
+            }
+
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questionpool/2
+
+
+### Delete Question from the pool [DELETE]
+
+You may remove a question from a pool by providing the QuestionPoolID key
++ Response 200 (application/json)
+
+        [
+            {
+            "QuestionPoolId": "1"
+            }
+        ]
++ Response 201 (application/json)
+
+    + Headers
+
+            Location: /questionpool/2
